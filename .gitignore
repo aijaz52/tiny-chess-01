@@ -1,1 +1,9 @@
 engine.py
+*.pyc
+analyze.py
+bench.py
+diagnostics.py
+pack_experiment.py
+replay_hang_test.py
+stress*.py
+__pycache__/
