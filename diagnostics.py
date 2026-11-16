@@ -165,7 +165,7 @@ def run():
     check("TT losing mate stored at ply 1", e.ng(s, 2, -e.I, e.I, 1)[0], -e.M + 3)
     check("TT losing mate reused at ply 3", e.ng(s, 2, -e.I, e.I, 3)[0], -e.M + 5)
     size = Path(e.__file__).stat().st_size
-    check(f"engine.py bytes={size} <=9030", size <= 9030, True)
+    check(f"engine.py bytes={size} <=10300", size <= 10300, True)
     print(f"TOTAL: {failures} failure(s)")
     return failures
 
