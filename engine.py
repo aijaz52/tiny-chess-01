@@ -1,5 +1,5 @@
 import os,json,urllib.request as L
-e=range;P,N,B,R,Q,K=e(1,7);V=[0,100,320,330,500,900,20000];D={N:(33,31,18,14,-14,-18,-31,-33),B:(17,15,-15,-17),R:(16,-16,1,-1)};D[Q]=D[K]=D[B]+D[R];U=os.getenv('MAKEFUN_ENV_URL','');_=None
+e=range;P,N,B,R,Q,K=e(1,7);V=[0,100,320,330,500,900,0];D={N:(33,31,18,14,-14,-18,-31,-33),B:(17,15,-15,-17),R:(16,-16,1,-1)};D[Q]=D[K]=D[B]+D[R];U=os.getenv('MAKEFUN_ENV_URL')
 def a(s):return'abcdefgh'[s&7]+str(1+(s>>4))
 def j(s):return ord(s[0])-97+(int(s[1])-1)*16
 class S:
@@ -84,10 +84,10 @@ def ai(s,m):
  if p&7==K:s.k[w]=i
  s.s^=1;return u
 def ak(s,m,u):
- o=m&127;i=m>>7&127;j=m>>14&7;f=m>>21&3;b=s.b;w=s.s^1;p=b[i]
+ o=m&127;i=m>>7&127;j=m>>14&7;c=m>>17&15;f=m>>21&3;b=s.b;w=s.s^1;p=b[i]
  if f==3:p=w<<3|P
- b[o]=p;b[i]=0
- if f==1:b[i-16+32*w]=j
+ b[o]=p;b[i]=c if f!=1 else 0
+ if f==1:b[i-16+32*w]=c
  if f==2:
   x,y={6:(7,5),2:(0,3),118:(119,117)}.get(i,(112,115));b[x],b[y]=b[y],0
  s.c,s.e,s.k[0],s.k[1],s.s=u
@@ -102,7 +102,7 @@ def mu(m):return a(m&127)+a(m>>7&127)+('  nbrq'[m>>14&7]if m>>14&7 else'')
 def ms(s,m):
  p=s.b[m&127];c=m>>17&15;t=m>>14&7
  return 100*V[t]+10*V[c&7]-V[p&7]
-ND=0;NL=30000
+ND=NL=0
 def ev(s):return sum((1-2*(p>>3))*V[p&7]for p in s.b if p)*(1-2*s.s)
 def sr(s,f,r):
  global ND
