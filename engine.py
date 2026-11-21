@@ -188,10 +188,10 @@ def X(s,d,a,b,Z,J=1):
   if a>=b:
    if not m>>17 and m>>21&3==0:G[m]=G.get(m,0)+d*d;y[Z]=([m]+[k for k in y.get(Z,())if k!=m])[:2]
    break
-  if T:return c,i
-  if not n:return H*(Z-M),_
-  f=1 if c<=r else 2 if c>=b else 0
-  if J:E[l]=d,c+(Z if c>29000 else-Z if c<-29000 else 0),f,i
+ if T:return c,i
+ if not n:return H*(Z-M),_
+ f=1 if c<=r else 2 if c>=b else 0
+ if J:E[l]=d,c+(Z if c>29000 else-Z if c<-29000 else 0),f,i
  return c,i
 def sr(s,f,r):
  global ND,T,o,q;E.clear();G.clear();y.clear();ND=T=0;o=r or{};q=[];l=lm(s)
