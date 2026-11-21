@@ -34,3 +34,12 @@ kit, unpack it, and from inside it run:
 It plays one practice trial against the house engines, replays it, and
 prints the Elo the scorer gives it. Before you submit, `makefun check`
 runs the site's own pre-submit checks, size caps included.
+
+## Engine v3
+
+Engine v3 tunes late-move reductions so eligible quiet alternatives receive
+reduced search earlier, keeping more work for the leading candidates. On the
+four-position `python3 bench.py` run (30,000 nodes per position), the first
+revision measured 26,689 nps and 1.124 s/move. The follow-up threshold tune
+measured 26,551 nps and 1.130 s/move across the same 120,000 nodes; both
+iterations selected the same move in all four positions.
